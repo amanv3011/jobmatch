@@ -1,0 +1,18 @@
+{
+  "name": "jobmatch-backend",
+  "version": "1.0.0",
+  "description": "Job aggregation, matching, and application-tracking API. Reads public ATS/job-board APIs, scores jobs against a resume, and drafts tailored application materials. Does not automate submission on LinkedIn or any platform that prohibits it.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "lowdb": "^7.0.1",
+    "uuid": "^9.0.1"
+  }
+}
