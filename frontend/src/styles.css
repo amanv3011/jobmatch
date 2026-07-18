@@ -175,3 +175,63 @@ button.ghost {
   font-size: 13px;
   margin-bottom: 14px;
 }
+
+.search-panel { padding: 16px 20px; }
+
+.search-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-input { flex: 2; min-width: 200px; }
+.search-input-narrow { flex: 1; min-width: 140px; }
+
+.search-row select { flex: 0 0 auto; }
+
+.filter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.source-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.source-pill {
+  font-size: 12px;
+  border: 1px solid var(--line);
+  background: #fdfcf9;
+  color: var(--ink-soft);
+  padding: 5px 11px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.source-pill.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.score-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 220px;
+}
+
+.score-filter-label {
+  font-size: 12px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  margin: 0;
+}
+
+.score-filter input[type=range] {
+  accent-color: var(--accent);
+  flex: 1;
+}

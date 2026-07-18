@@ -2,12 +2,14 @@ import { useState, useEffect, useCallback } from 'react';
 import { api } from './api.js';
 import ResumeUpload from './components/ResumeUpload.jsx';
 import SyncPanel from './components/SyncPanel.jsx';
+import SearchFilterBar from './components/SearchFilterBar.jsx';
 import JobList from './components/JobList.jsx';
 import Tracker from './components/Tracker.jsx';
 
 export default function App() {
   const [tab, setTab] = useState('jobs');
   const [jobs, setJobs] = useState([]);
+  const [filteredJobs, setFilteredJobs] = useState([]);
   const [applications, setApplications] = useState([]);
 
   const loadJobs = useCallback(() => api.getJobs().then(setJobs), []);
@@ -40,7 +42,8 @@ export default function App() {
       {tab === 'jobs' && (
         <>
           <SyncPanel onSynced={loadJobs} />
-          <JobList jobs={jobs} onSave={handleSaveJob} />
+          {jobs.length > 0 && <SearchFilterBar jobs={jobs} onFiltered={setFilteredJobs} />}
+          <JobList jobs={jobs.length > 0 ? filteredJobs : jobs} onSave={handleSaveJob} />
         </>
       )}
 
